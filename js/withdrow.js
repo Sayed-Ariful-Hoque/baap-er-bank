@@ -14,6 +14,14 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const newWithdrawAmount = parseFloat(newWithDrawAmountString);
     console.log(newWithdrawAmount);
 
+    // step-7:
+    widthrawField.value =''
+
+    if(isNaN(newWithdrawAmount)){
+        alert('please provide a valid number');
+        return;
+    }
+
     // stpe-3:
     const withdrawTotalElement = document.getElementById('widtraw-total');
     const previousWidrawtotalString = withdrawTotalElement.innerText;
@@ -25,8 +33,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const previousBlanceTotalString = balanceTotalElement.innerText;
     const previousBlanceTotal = parseFloat(previousBlanceTotalString);
 
-     // step-7:
-     widthrawField.value =''
+     
 
     if (newWithdrawAmount > previousBlanceTotal){
         alert('Baap er bank e eto taka nai')
