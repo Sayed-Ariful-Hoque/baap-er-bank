@@ -18,20 +18,29 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const withdrawTotalElement = document.getElementById('widtraw-total');
     const previousWidrawtotalString = withdrawTotalElement.innerText;
     const previousWithdrawTotal = parseFloat(previousWidrawtotalString);
-    // step-4
-    const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-    withdrawTotalElement.innerText = currentWithdrawTotal;
+    
 
     // step-5
     const balanceTotalElement = document. getElementById('balanc-total')
     const previousBlanceTotalString = balanceTotalElement.innerText;
     const previousBlanceTotal = parseFloat(previousBlanceTotalString);
+
+     // step-7:
+     widthrawField.value =''
+
+    if (newWithdrawAmount > previousBlanceTotal){
+        alert('Baap er bank e eto taka nai')
+        return;
+    }
+
+    // step-4
+    const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+    withdrawTotalElement.innerText = currentWithdrawTotal;
     
     
     // step-6
     const newBalanceTotal = previousBlanceTotal - newWithdrawAmount
     balanceTotalElement.innerText = newBalanceTotal;
 
-    // step-7:
-    widthrawField.value =''
+   
 })
